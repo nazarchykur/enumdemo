@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: enumdemo-postgres
+    restart: always
+    environment:
+      POSTGRES_DB: enumdemo
+      POSTGRES_USER: enumdemo
+      POSTGRES_PASSWORD: enumdemo
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
+
